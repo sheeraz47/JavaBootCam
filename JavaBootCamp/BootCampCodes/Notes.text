@@ -1,0 +1,493 @@
+02/25/2020
+Java BootCamp
+
+	Topics: primitives
+			Operators
+			Control flow statements
+			String Manipulations
+			Wrapper class
+			Arrays
+			Loops
+			Methods
+			Method Overloading
+			static keyword
+			constructor, this&super
+			access modifiers
+			OOP Encapsulation
+			OOP Inheritance
+			Method Overriding
+			final keyword
+			OOP Abstraction
+			OOP polymorphisim
+			Collection: List & Set
+			Map
+
+1. primitives: byte, short, int, long, float, double, char, boolean
+
+2. Operators: +, -, *, /, %, >, <, >=, <=, ==, !=, -=, +=, *=, /=, %=, ++, --,  ||, &&, !
+
+3. Control flow statements: if statment, switch statemns
+
+		single if:
+				if(Condition){
+					statements;  // only gets executed if condition is true
+				}
+
+		if else statement:
+				if(Condition){
+					statemnt1;
+				} else{
+					statement2;
+				}
+
+		multi-branch if:
+			if(Condition1){
+				statement1;
+			}else if(Condition2){
+				statement2;
+			} else if(Condition3){
+				statementr3;
+			}
+				....
+			else{
+				statemntN;
+			}
+
+
+		Switch statement: float, boolean, double, long
+			switch(DataType){
+				case data:
+							statemnts
+							break;
+				case data:
+						statements
+						break;
+
+				default:
+					statements;		
+
+			}
+
+			case data MUST have match with siwth statements expression
+
+			break: exits the switch statement & Loops
+
+
+String: immutable object, represents the sequence of characters
+		immutable: cannot change
+
+		two ways:
+				String literals: String str = "text";
+				new keyword: String str2 = new String("text");
+
+		methods: substring, toupper, to lower, charat, indeOf, LastIndexOf, trim, cancat, replace, replaceFirst, isEmpty, startswith, endswith, equal, equalIgnoreCase, split, toCharArray
+
+
+
+StringBuilder & StringBuffer: mutable version represents the sequence of characters
+
+		Stringbuilder: not synchronized
+		StringBuffer: synchronized
+
+			synchronize: thread safe . multiple threads access to the same resournces one by one.
+						slower
+
+
+Wrapper classes: every primitives has a class dedicated to it
+
+		Byte, Short, Integer, Log, Float, Double, Boolean, Character
+
+		only accept thier own primitve values.
+
+		methods:
+			Max_Value
+			Min_Value:
+			Parse methods: convert string to primitives
+			ValueOf methods: converting string to wrapper classes
+
+
+Array: one of the data structure in java
+		has index num, size is fixed
+
+		int[] arr ={1,2,2,3,4,5};
+		int[] arr = new int[sizeNumber];
+
+	Arrays util class: 
+			sort, toString, deepToString, equal
+
+ 
+	multidimensional Array: n dimensional array contains (n-1) dimensional arrays
+
+			int[][] arr2D = { { 1,2}, {3,4  }  };
+
+
+Loops: repeated action
+	
+	for loop:
+		for(initialization; condition;  iterator){
+			statements;
+		}
+
+		execution:
+				1. initialization
+				2. Condition
+			if conditionis true:
+				3. statements
+				4. iterator
+
+		repeated until condition becomes false
+
+
+	While loop:
+		while(Condition){
+			statement;
+		}
+			statemnt gets executed until condition becomes false
+
+
+	do-While loop:
+		do{
+			statemnbts
+
+		}while(Condition);
+
+		at least executed once, even if the condition is false		
+
+		statemnt gets executed until condition becomes false
+
+
+	for each loop:
+ 
+			for( VariableNam : CollectionOfData ){
+
+			}
+
+			variableName: represenst the each elemnt in the CollectionOfData
+
+			how many time it gets execute depends on the size of  CollectionOfData
+
+
+
+Custom methods: grouping a series of codes to do specific action
+		
+		declearation:
+			Access-modifer  specifier  return-type methodName (parameter){
+					codes;
+			}
+
+			Access-modifers: public, protected, default, private
+			specifier: static, final, abstract, synchronized
+			returntype: void, any primitive, any objects
+			parameter: any primitive, any objects
+
+			RETURN TYPE AND METHODNAME ARE MANDATORY TO GIVE
+
+ 
+method overloading: same name, different parameter
+					return type can be different
+
+			advantage: easy to remmber 
+					 	flexible
+					 	readable
+					 	reusable
+
+
+static keyword: can be called through class name ( class member )
+
+				one copy shared by all the objects of the class
+
+				static members:
+						1. static variable
+						2. static methods
+						3. static block
+						4. static inner class
+
+						static methods and blocks and clases only accept static members
+
+
+	instance variable:  belongs to the object
+			each object has its own copy
+
+			static block: gets executed when class is loaded. executed first only one time
+
+
+
+Constrcutor: used for creating the object
+			execution depends on the creation of object
+			every class MUST have constructor, otherwise compiler will give deafult constructor
+
+	declearation:
+			Access-modifier ClassName(parameter){
+				codes;
+			}
+
+		we can have multiple constructors in a class by overloading it
+
+
+	this: refers to the instance of the objects
+		this. :used for calling instance methods and instance variables
+		this(): calls the constructor
+
+	super: refers to the intsance of objects of the super class
+		super. :used for calling instance methods and instance variables from super clas
+		super(): calls the constructor from the super
+
+	this & super keyword cannot be used in static
+
+
+Access modifiers:
+		public: vsisible to the wolrd. can be accessed ouside package
+		protected: only visible within sama package, can be inherited outside package
+		default: only visible within sama package
+		private: only visible within class
+
+
+OOP Encapsulation: hiding the data by giving private access modifier, grants access to the data through public getter/setter
+
+	getters (read ONLY) : returns the private data only
+						  no parameter
+
+	setter (modifies) : re-assigns the private data with ithe given argument
+						has parameter
+						paramter' data type MUST match with private data
+
+
+
+OOP Inheritance: Is A relation between classes
+
+		Class  A   extends  B
+			  sub          super
+
+
+		sub class : can inherit from super class
+
+		super class: cannot inherit anything from sub class
+
+
+
+		advantages: 
+					reusable
+					easy to maintain
+					avoid duplicated codes
+					readable
+
+		a class can only extend one class
+		a class can be extended by multiple classes
+
+
+	Has A: the object of one class is used in anotehr class that has no inheiritance relationship of
+
+		class Engine{
+
+		}
+
+
+		class car{
+
+			Engine obj1 = new Engine();
+
+		}
+
+		Car Has An Engine
+
+		class test extends BasePage{
+
+			WebDriver driver = new ChromeDriver();
+			Actions act = new Actions();
+			LogInPage lg = new LogInPage();
+		}
+		test Has A chromeDriver
+		test Has LogInPage Elements
+
+
+
+method Overriding: giving different implemntation/function to the method
+
+		rules:
+			1. takes place in sub class
+			2. same method Name, Paramters, and return-type MUST be same
+			3. same access modifer or more visible acccess modifier
+			4. only the isntance method (not final, not private)
+			5. @Override annotation MUST be applicable
+
+
+			@Override: checks if the method is being overridden
+
+
+
+	method overriding vs overloading:
+				method overriding:  runtime poly
+							1. takes place in sub class
+							2. same method Name, Paramters, and return-type MUST be same
+							3. same access modifer or more visible acccess modifier
+							4. only the isntance method (not final, not private)
+							5. @Override annotation MUST be applicable
+
+					JsExecuter js = new CHomeDriver();
+						js.excuteScript()
+
+
+					TakeSceenShot ts = new ChromeDriver();
+
+					WebDriver driver = new ChromeDriver();
+							driver.get(overridden);
+
+				method overloading: compil time poly
+							1. can happen in same class
+							2. same method name, different parameter
+							3. return type can be same or different
+							4. access modifier does not matter
+							5. any method can be overloaded
+
+
+
+final keyword: constant, immutable, cannot be changed
+
+		1. final variables: cannot be re-assigned
+		2. final methods: implementation of the methdo can not be changed ( cannot be overriden)
+		3. final class: immutable class, cannot be inherited
+				final calss cannot be super class, it can extend the mutable classes
+
+
+
+OOP Abstraction: hiding the implmentation details.
+				focuses on what it is, instead of how it's done
+
+				achived by using abstract methods
+
+				abstract method: does not have body, meant to be overriden
+								 cannot be static, final, and private
+
+				two ways to achieve abstraction:
+									1. Interface: blue print of class. pure abstraction
+												methods: static method, abstract method, default method
+												variables: all variables are "public static final" by default
+
+
+									2. Abstract class: meant to be extended (cannot final)
+													   not concrete, cannot create object
+													   can have abstract and none abstracts everything
+
+
+							class can only extend one class.
+							class can implement multiple interface
+
+							class extends class 
+							interface extends interface
+							class implments interface
+
+
+		class car{
+			abstract start();
+		}
+
+		class Totyota{
+				start(){ key }
+		}
+
+		class BMW{
+			start() {push button}
+		}
+
+		class Jeep{
+			start() { jumpstart }
+		}
+
+
+OOP polymorphisim: object's behave in manyt forms
+
+			Only occures when a super class/super-type is refernce to child classes object
+
+			Ex: 
+				WebDriver     driver       =   new  ChromeDriver();
+				ref-type      ref name              object
+
+				reference type decides what can be called
+
+				overriden one gets executed
+
+UpCasting:
+		ex:
+			WebDriver driver= new ChromeDriver();
+
+			JSExecuter js = (JSExecuter)driver;
+			js.executerScript("Script")
+
+			TakeScreenShot ts = (TakeScreenShot)driver;
+
+
+Collection(I): extended by List(I), Set(I), Queue(I). only support Objects
+
+		List(I): deos have index num, takes duplcates
+				implemnted by: ArrayList: singly linked, retriving is faster
+							   LinkedList: doubly linked, adding and removing are faster
+							   Vector: Synchronized, thread fase
+							   		extended by Stack: LIFO
+
+		Set(I): does not have index number, does not take duplicates
+			implemneted by:
+						HashSet: deos not keep insertio n order
+						LinkedHashSet: doubly Linked. keeps the insertion order
+
+			extended by SortedSet
+					implemnted by TreeSet: it's sorted
+
+		Queue(I): does not have index numbers, takes duplicates (FIFO)
+
+ 
+Map:  Key, Value. only supports objects. does not accept duplicated keys
+
+	HashMap: not synchronized, aceepts null key
+	HashTable: synchronzied, does not accept null
+	LinkedHashMap: keeps the insertion order
+	TreeMap: sorted Key
+
+methods:
+	getKey, getvalues, keyset, values, entry, put, has
+
+
+
+Exceptions: unexpected or unwanted event
+	
+	checked (unwanted event) : during compile time. must be handled immedietly
+
+	unchecked (unexpected event): during runtime
+
+	Ex:
+		TimoutException
+		StaleElement
+		NoSuchElement
+		WebdriverException
+		.......
+
+	exception handling:
+
+			1. try&catch:
+					try{
+						exception code;
+					}catch(Exceptionclass){
+
+					}finally{
+						statements // always executed
+					}
+
+
+
+
+			2. throws keyword: indicating that the method throws exceptions
+						caller will be responsible for handling the exception
+
+
+
+throw: for manually throwing the exception
+
+to create custom checked exception class: 
+		by extending Exceptions class
+
+to create custom unchecked exception class: 	
+		by extending RuntimeException	
+
+
+
+
+
